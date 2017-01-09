@@ -1,0 +1,33 @@
+<div class="container">
+<h1>DAD - Websockets</h1>
+<hr>
+<h2>REGISTER</h2>
+<br>
+<form #registerForm="ngForm">
+    <input name="username" placeholder="Type a username" size="20" required
+            [(ngModel)]="username"
+        >
+        <input type="password" name="password" placeholder="Type a password" size="20" required
+            [(ngModel)]="password"
+        >
+    <button class="btn btn-primary"
+        [disabled]="!registerForm.form.valid"
+        (click)="send()">Register</button>
+</form>
+<hr>
+<h2>Login</h2>
+<br>
+<form #loginForm="ngForm">
+    <input name="username" placeholder="Type a username" size="20" required
+            [(ngModel)]="logName"
+        >
+        <input type="password" name="password" placeholder="Type a password" size="20" required
+            [(ngModel)]="logPass"
+        >
+    <button class="btn btn-primary"
+        [disabled]="!loginForm.form.valid"
+        (click)="login()">Login</button>
+</form>
+<router-outlet></router-outlet>
+
+ 

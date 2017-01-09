@@ -1,0 +1,12 @@
+<div class = "lobby">
+<hr>
+<h1>Game Lobby</h1>
+<div *ngFor="let game of jogos">
+<br>
+<button routerLink="/game" >Join Game {{game.gameName}} </button>
+</div>
+
+<hr>
+Game Name: <input id="character" class="input" type="text" name="character" [(ngModel)]="gameName">
+<button (click) = "createGame()"> Create Game </button>
+</div>

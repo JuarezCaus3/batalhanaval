@@ -1,0 +1,40 @@
+<h1>GAME</h1>
+<hr>
+<div class = "board">
+	<div class="game-cell" *ngFor="let cell of tabuleiro.celulas" [style.background-color] = "getColor(cell)" (click)="clickCelulaTiro(cell)">
+    {{checkTiro(cell)}}
+	</div>
+</div>
+
+<hr>
+
+<div class = "board">
+  <div class="game-cell" *ngFor="let cell of testeTabs.celulas" [style.background-color] = "getColor(cell)" (click)="clickCelulaTiro(cell)">
+    {{checkTiro(cell)}}
+  </div>
+</div>
+
+<div class = "placement-options">
+<select #b id="battleships-select" >
+  <option value="PortaAvioes">PortaAvioes</option>
+  <option value="Couracado">Couracado</option>
+  <option value="Cruzador">Cruzador</option>
+  <option value="ContraTorpedeiro">ContraTorpedeiro</option>
+  <option value="Submarino">Submarino</option>
+</select>
+
+<select #orientation id="orientation-select" >
+  <option value="Normal">Normal</option>
+  <option value="Roda90">Roda90</option>
+  <option value="Roda180">Roda180</option>
+  <option value="Roda270">Roda270</option>
+</select>
+
+
+
+
+Linha: <input id="character" class="input" type="text" name="character" [(ngModel)]="character">
+Coluna: <input class="input" type="number" name="number"  [(ngModel)]="coluna">
+
+<button (click)="adicionaNavio(b.value, orientation.value)">Adiciona Navio</button>
+</div>
